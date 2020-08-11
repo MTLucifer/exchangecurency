@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<table>
+    <form action="http://localhost:63342/ExchangeCurrency/exchange.html?_ijt=rnf9a3lai3or8bmi1sd4h6qif9"></form>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="number" id="amount">
+        </td>
+        <td>
+            <select name="country" id="from">
+                <option value="1" id="VN">VND</option>
+                <option value="23000" id="USA">USD</option>
+                <option value="27000" id="EU">EURO</option>
+                <option value="20" id="KR">KRW</option>
+                <option value="218" id="JP">JPY</option>git
+        </select>
+        </td>
+        <td>
+            <select name="country" id="to">
+                <option value="1" id="VN">VND</option>
+                <option value="23000" id="USA">USD</option>
+                <option value="27000" id="EU">EURO</option>
+                <option value="20" id="KR">KRW</option>
+                <option value="218" id="JP">JPY</option>
+            </select>
+        </td>
+        <td>
+            <input type="button" onclick="convert()" value="Convert">
+        </td>
+    </tr>
+</table>
+<p><span id="result"></span></p>
+
+<script>
+function convert() {
+    let amount = Number(document.getElementById("amount").value);
+    let from = document.getElementById("from").value;
+    let to = document.getElementById("to").value;
+    let result = amount * from / to
+    document.getElementById("result").innerHTML = "Result is: " + result.toFixed(3);
+}
+</script>
+</body>
+</html>
